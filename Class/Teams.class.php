@@ -12,5 +12,11 @@
 		public function setPays($pays) {
 			$this->_pays = $pays;
 		}
-	
+		
+		// Constructeur
+		// ************
+		public function __construct($nomPays) {
+			$this->_pays = $nomPays;
+		}
+
 	}
