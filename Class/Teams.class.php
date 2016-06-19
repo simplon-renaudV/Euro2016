@@ -5,6 +5,7 @@
 		
 		// getters & setters
 		// *****************
+		
 		public function getPays() {
 			return $this->_pays;
 		}
@@ -15,6 +16,7 @@
 		
 		// Constructeur
 		// ************
+		
 		public function __construct($nomPays) {
 			$this->_pays = $nomPays;
 		}

@@ -7,6 +7,7 @@
 
 		// getters & setters
 		// *****************
+		
 		public function getTabTeams() {
 			return $this->_tabTeams;
 		}
@@ -33,6 +34,7 @@
 
 		// toString
 		// ********
+		
 		public function __toString() {
 			$groupe = '<a href=Euro2016.php?grp='.$this->_nomGroupe.'>Groupe '.$this->_nomGroupe.' : </a><br/>';
 			foreach($this->_tabTeams as $pays) {
@@ -43,6 +45,7 @@
 	
 		// Constructeur
 		// ************
+		
 		public function __construct ($lettre, $equipes) {
 			$this->_nomGroupe = $lettre;
 			$this->_tabTeams = $equipes;
@@ -55,7 +58,7 @@
 		public function creationListeMatchs() {
 			for ($i=0; $i<count($this->_tabTeams); $i++) {
 				for (($j=$i+1); $j<count($this->_tabTeams); $j++) {
-					array_push($this->_tabRencontres, $this->_tabTeams[$i]." - ".$this->_tabTeams[$j]);
+					array_push($this->_tabRencontres, [$this->_tabTeams[$i],$this->_tabTeams[$j]]);
 				}
 			}
 		}
