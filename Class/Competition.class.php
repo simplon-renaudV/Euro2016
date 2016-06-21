@@ -43,6 +43,7 @@
 			$fichJson = file_get_contents($url);
 			$this->_json = json_decode($fichJson);
 			$this->_nomCompetition = $this->_json->name;
+			$this->createGroupes();
 		}
 
 		// Méthodes
