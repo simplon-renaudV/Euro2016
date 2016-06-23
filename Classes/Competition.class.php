@@ -1,7 +1,6 @@
 <?php
 	
-	include_once ('Class/Groups.class.php');
-	include_once ('Class/Teams.class.php');
+	namespace Classes;
 
 	class Competition {
 		

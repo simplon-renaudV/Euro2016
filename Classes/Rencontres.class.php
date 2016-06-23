@@ -1,6 +1,6 @@
 <?php
-	include_once('Groups.class.php');
-
+	namespace Classes;
+	
 	class Rencontres {
 		private $_nomGroupe;
 		private $_equipes = [];

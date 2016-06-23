@@ -1,6 +1,6 @@
 <?php
-	include_once('Rencontres.class.php');
-
+	namespace Classes;
+	
 	class groups {
 
 		private $_nomGroupe;
