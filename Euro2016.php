@@ -39,7 +39,7 @@
 	function afficheRencontres($group, $pays1, $pays2) {
 		echo $pays1.' - '.$pays2;
 		formulaire('Pronostics', $group, $pays1, $pays2);
-		formulaire('Score', $group, $pays1, $pays2);
+		formulaire('Scores', $group, $pays1, $pays2);
 
 	}
 
