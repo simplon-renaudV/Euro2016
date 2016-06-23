@@ -47,7 +47,7 @@
 
 		public function __construct($nomGroupe, $equipes) {
 			$this->_nomGroupe = $nomGroupe;
-			$this->_equipes[0] = $equipes[0];
-			$this->_equipes[1] = $equipes[1];
+			$this->_equipes[0] = [$equipes[0]->getPays(),$equipes[0]->getFlag()];
+			$this->_equipes[1] = [$equipes[1]->getPays(),$equipes[1]->getFlag()];
 		}
 	}

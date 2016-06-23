@@ -19,7 +19,7 @@
 
 	// Affiche un formulaire pour les scores ou les pronostics, en fonction du type
 	function formulaire($type, $group, $pays1, $pays2){
-		echo '<form method="post" action="save.php?f='.$type.'&grp='.$group.'&p1='.$pays1.'&p2='.$pays2.'">';
+		echo '<form method="post" action="save.php?t='.$type.'&grp='.$group.'&p1='.$pays1.'&p2='.$pays2.'">';
 		echo '<input type="number" name="equipe1"/>';
 		echo '<input type="number" name="equipe2"/>';
 		echo '<input type="submit" value="'.$type.'"/>';
@@ -28,8 +28,8 @@
 
 	// Affiche les rencontres du groupe avec les formulaires de pronostic et de score
 	function afficheRencontres($group, $pays1, $pays2) {
-		echo $pays1.' - '.$pays2;
-		formulaire('Pronostics', $group, $pays1, $pays2);
-		formulaire('Scores', $group, $pays1, $pays2);
+		echo $pays1[0].'<img src="'.$pays1[1].'"/> - <img src="'.$pays2[1].'"/>'.$pays2[0];
+		formulaire('Pronostics', $group, $pays1[0], $pays2[0]);
+		formulaire('Scores', $group, $pays1[0], $pays2[0]);
 
 	}

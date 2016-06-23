@@ -3,27 +3,129 @@
   "groups":[
     {
       "id":"A",
-      "teams":["France","Roumanie", "Albanie", "Suisse"]
+      "teams": [
+        {
+          "nom": "France",
+          "flag": "assets/flags/france.png"
+        },
+        {
+          "nom": "Roumanie",
+          "flag": "assets/flags/roumanie.png"
+        },
+        {
+          "nom": "Albanie",
+          "flag": "assets/flags/albanie.png"
+        },
+        {
+          "nom": "Suisse",
+          "flag": "assets/flags/suisse.png"
+        }
+      ]
     },
     {
       "id":"B",
-      "teams":["Angleterre","Russie", "Pays de Galles", "Slovaquie"]
+      "teams":[
+        {
+          "nom": "Angleterre",
+          "flag": "assets/flags/angleterre.png"
+        },
+        {
+          "nom": "Russie",
+          "flag": "assets/flags/russie.png"
+        },
+        {
+          "nom": "Pays de Galle",
+          "flag": "assets/flags/paysDeGalle.png"
+        },
+        {
+          "nom": "Slovaquie",
+          "flag": "assets/flags/slovaquie.png"
+        }
+      ]
     },
     {
       "id":"C",
-      "teams":["Allemagne","Ukraine", "Pologne", "Irlande du Nord"]
+      "teams":[
+        {
+          "nom": "Allemagne",
+          "flag": "assets/flags/allemagne.png"
+        },
+        {
+          "nom": "Pologne",
+          "flag": "assets/flags/pologne.png"
+        },
+        {
+          "nom": "Irlande du Nord",
+          "flag": "assets/flags/irlandeNord.png"
+        },
+        {
+          "nom": "Ukraine",
+          "flag": "assets/flags/ukraine.png"
+        }
+      ]
     },
     {
       "id":"D",
-      "teams":["Espagne","Rép.Tchéque", "Turquie", "Croatie"]
+      "teams":[
+        {
+          "nom": "Espagne",
+          "flag": "assets/flags/espagne.png"
+        },
+        {
+          "nom": "Croatie",
+          "flag": "assets/flags/croatie.png"
+        },
+        {
+          "nom": "Rép. Tchèque",
+          "flag": "assets/flags/repTcheque.png"
+        },
+        {
+          "nom": "Turquie",
+          "flag": "assets/flags/turquie.png"
+        }
+      ]
     },
     {
       "id":"E",
-      "teams":["Belgique","Italie", "Rép. d'Irlande", "Suède"]
+      "teams":[
+        {
+          "nom": "Belgique",
+          "flag": "assets/flags/belgique.png"
+        },
+        {
+          "nom": "Italie",
+          "flag": "assets/flags/italie.png"
+        },
+        {
+          "nom": "Suède",
+          "flag": "assets/flags/suede.png"
+        },
+        {
+          "nom": "Rép. d'Irlande",
+          "flag": "assets/flags/repIrlande.png"
+        }
+      ]
     },
     {
       "id":"F",
-      "teams":["Portugal","Islande", "Autriche", "Hongrie"]
+      "teams":[
+        {
+          "nom": "Hongrie",
+          "flag": "assets/flags/hongrie.png"
+        },
+        {
+          "nom": "Islande",
+          "flag": "assets/flags/islande.png"
+        },
+        {
+          "nom": "Portugal",
+          "flag": "assets/flags/portugal.png"
+        },
+        {
+          "nom": "Autriche",
+          "flag": "assets/flags/autriche.png"
+        }
+      ]
     }
   ]
 }

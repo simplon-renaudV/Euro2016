@@ -10,7 +10,7 @@
 
 	$euro2016 = new Competition('Json/competition.json');
 
-	$data = $bdd->prepare("INSERT INTO ".$_GET['f']." (groupe, pays1, pays2, score1, score2) VALUES (:groupe, :pays1, :pays2, :score1, :score2)");
+	$data = $bdd->prepare("INSERT INTO ".$_GET['t']." (groupe, pays1, pays2, score1, score2) VALUES (:groupe, :pays1, :pays2, :score1, :score2)");
 	$data -> execute(array(
 		'groupe' => $_GET['grp'],
         'pays1' => $_GET['p1'],

@@ -41,7 +41,7 @@
 			$this->_nomGroupe = $lettre;
 			
 			for ($i=0; $i<count($equipes); $i++) {
-				$equipe = new Teams($equipes[$i]);
+				$equipe = new Teams($equipes[$i]->nom, $equipes[$i]->flag);
 				array_push($this->_tabTeams, $equipe);
 			}
 			$this->creationListeMatchs();
@@ -52,9 +52,9 @@
 
 		// Renvoi le groupe ainsi que les pays le constituant
 		public function afficheGroupe() {
-			$groupe = '<a href=Euro2016.php?grp='.$this->_nomGroupe.'>Groupe '.$this->_nomGroupe.' : </a><br/>';
+			$groupe = '<a href=Euro2016.php?grp='.$this->_nomGroupe.'><h1>Groupe '.$this->_nomGroupe.' : </h1></a><br/>';
 			foreach($this->_tabTeams as $pays) {
-				$groupe .= $pays->getPays().'<br/>';
+				$groupe .= '<div>'.$pays->getPays().'<img src="'.$pays->getFlag().'"/></div><br/>';
 			}
 			return $groupe;
 		}
@@ -63,7 +63,7 @@
 		public function creationListeMatchs() {
 			for ($i=0; $i<count($this->_tabTeams); $i++) {
 				for (($j=$i+1); $j<count($this->_tabTeams); $j++) {
-					$rencontre = new Rencontres($this->_nomGroupe,[$this->_tabTeams[$i]->getPays(),$this->_tabTeams[$j]->getPays()]);
+					$rencontre = new Rencontres($this->_nomGroupe,[$this->_tabTeams[$i],$this->_tabTeams[$j]]);
 					array_push($this->_tabRencontres, $rencontre);
 				}
 			}
