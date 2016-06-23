@@ -39,7 +39,11 @@
 		
 		public function __construct ($lettre, $equipes) {
 			$this->_nomGroupe = $lettre;
-			$this->_tabTeams = $equipes;
+			
+			for ($i=0; $i<count($equipes); $i++) {
+				$equipe = new Teams($equipes[$i]);
+				array_push($this->_tabTeams, $equipe);
+			}
 			$this->creationListeMatchs();
 		}
 
@@ -50,7 +54,7 @@
 		public function afficheGroupe() {
 			$groupe = '<a href=Euro2016.php?grp='.$this->_nomGroupe.'>Groupe '.$this->_nomGroupe.' : </a><br/>';
 			foreach($this->_tabTeams as $pays) {
-				$groupe .= $pays.'<br/>';
+				$groupe .= $pays->getPays().'<br/>';
 			}
 			return $groupe;
 		}
@@ -59,7 +63,7 @@
 		public function creationListeMatchs() {
 			for ($i=0; $i<count($this->_tabTeams); $i++) {
 				for (($j=$i+1); $j<count($this->_tabTeams); $j++) {
-					$rencontre = new Rencontres($this->_nomGroupe,[$this->_tabTeams[$i],$this->_tabTeams[$j]]);
+					$rencontre = new Rencontres($this->_nomGroupe,[$this->_tabTeams[$i]->getPays(),$this->_tabTeams[$j]->getPays()]);
 					array_push($this->_tabRencontres, $rencontre);
 				}
 			}
