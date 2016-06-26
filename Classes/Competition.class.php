@@ -31,7 +31,7 @@
 			$this->_nomCompetition = $competition;
 		}
 
-		public function setTabGroups($groupes) {
+		public function setTabGroups(array $groupes) {
 			$this->_tabGroups = $groupes;
 		}
 

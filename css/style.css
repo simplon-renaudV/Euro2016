@@ -1,3 +1,23 @@
+body {
+	width:100%;
+}
+
 img {
 	width:60px;
+}
+
+.nomGroupe {
+	background-color: #ED6E25;
+	text-align: center;
+	padding: 5px 0;
+}
+
+.pays {
+	font-size: 20px;
+	text-align: center;
+}
+
+.rencontre {
+	width:50%;
+	margin: 0 auto;
 }

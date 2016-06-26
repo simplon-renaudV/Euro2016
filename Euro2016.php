@@ -3,6 +3,7 @@
 <head>
 	<title>Euro 2016</title>
 	<link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
 </head>
 <body>
 
@@ -29,7 +30,7 @@
 	// sinon on affiche la liste des matchs du groupe
 	else {
 		rencontres($euro2016);
-		echo '<br/><a href="Euro2016.php">Retour à la liste</a>';
+		echo '<br/><a href="Euro2016.php" class="retour">Retour à la liste</a>';
 	}
 ?>
 

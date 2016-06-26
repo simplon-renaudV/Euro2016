@@ -14,28 +14,12 @@
 			return $this->_equipes;
 		} 
 
-		public function getScores() {
-			return $this->_score;
-		}
-
-		public function getPronostic() {
-			return $this->_pronostic;
-		}
-
 		public function getNomGroupe() {
 			return $this->_nomGroupe;
 		}
 
-		public function setEquipes($equipes) {
+		public function setEquipes(array $equipes) {
 			$this->_equipes = $equipes;
-		}
-
-		public function setScore($score) {
-			$this->_score = $score;
-		}
-
-		public function setPronostic($pronostic) {
-			$this->_pronostic = $pronostic;
 		}
 
 		public function setNomGroupe($groupe) {
@@ -45,10 +29,8 @@
 		// Constructeur
 		// ************
 
-		public function __construct($nomGroupe, $equipes) {
+		public function __construct($nomGroupe, array $equipes) {
 			$this->_nomGroupe = $nomGroupe;
-			//$this->_equipes[0] = [$equipes[0]->getPays(),$equipes[0]->getFlag()];
-			//$this->_equipes[1] = [$equipes[1]->getPays(),$equipes[1]->getFlag()];
 			$this->_equipes = $equipes;
 		}
 	}

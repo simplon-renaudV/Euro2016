@@ -22,7 +22,7 @@
 			return $this->_tabRencontres;
 		}
 
-		public function setTabTeams($tabTeams) {
+		public function setTabTeams(array $tabTeams) {
 			$this->_tabTeams = $tabTeams;
 		}
 
@@ -30,14 +30,14 @@
 			$this->_nomGroupe = $nomGroupe;
 		}
 	
-		public function setTabRencontres($tabRencontres) {
+		public function setTabRencontres(array $tabRencontres) {
 			$this->_tabRencontres = $tabRencontres;
 		}
 		
 		// Constructeur
 		// ************
 		
-		public function __construct ($lettre, $equipes) {
+		public function __construct ($lettre, array $equipes) {
 			$this->_nomGroupe = $lettre;
 			
 			for ($i=0; $i<count($equipes); $i++) {
