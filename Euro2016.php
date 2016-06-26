@@ -21,7 +21,8 @@
 	// si il n'y a pas d'equipes en paramètres get, affiche la liste des groupes
 	if (!isset($_GET['grp'])) {
 		for ($i=0; $i<count($euro2016->getTabGroups()); $i++) {
-			echo $euro2016->getTabGroups()[$i]->afficheGroupe().'<br/>';
+			$groupe = $euro2016->getTabGroups()[$i];
+			afficheGroupe($groupe).'<br/>';
 		}
 	}
 

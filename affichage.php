@@ -7,11 +7,8 @@
 
 				for ($j = 0; $j < count($competition->getTabGroups()[$i]->getTabRencontres()); $j++) {
 
-					$pays1 = $competition->getTabGroups()[$i]->getTabRencontres()[$j]->getEquipes()[0];
-					$pays2 = $competition->getTabGroups()[$i]->getTabRencontres()[$j]->getEquipes()[1];
-					$nomGroupe = $competition->getTabGroups()[$i]->getTabRencontres()[$j]->getNomGroupe();
-
-					afficheRencontres($nomGroupe, $pays1, $pays2);
+					$rencontre = $competition->getTabGroups()[$i]->getTabRencontres()[$j];
+					afficheRencontres($rencontre);
 				}
 			}
 		}
@@ -27,9 +24,25 @@
 	}
 
 	// Affiche les rencontres du groupe avec les formulaires de pronostic et de score
-	function afficheRencontres($group, $pays1, $pays2) {
-		echo $pays1[0].'<img src="'.$pays1[1].'"/> - <img src="'.$pays2[1].'"/>'.$pays2[0];
-		formulaire('Pronostics', $group, $pays1[0], $pays2[0]);
-		formulaire('Scores', $group, $pays1[0], $pays2[0]);
+	function afficheRencontres($rencontre) {
+		$pays1 = $rencontre->getEquipes()[0];
+		$pays2 = $rencontre->getEquipes()[1];
+		$group = $rencontre->getNomGroupe();
 
+		echo $pays1->getPays().'<img src="'.$pays1->getFlag().'"/> - <img src="'.$pays2->getFlag().'"/>'.$pays2->getPays();
+
+		formulaire('Pronostics', $group, $pays1->getPays(), $pays2->getPays());
+		formulaire('Scores', $group, $pays1->getPays(), $pays2->getPays());
+	}
+
+	// Affiche la liste des pays du groupe
+	function afficheGroupe($grp) {
+
+		$groupe = $grp->getNomGroupe();
+		$equipes = $grp->getTabTeams();
+
+		echo '<a href=Euro2016.php?grp='.$groupe.'><h1>Groupe '.$groupe.' : </h1></a><br/>';
+			foreach($equipes as $pays) {
+				echo '<div>'.$pays->getPays().'<img src="'.$pays->getFlag().'"/></div><br/>';
+			}
 	}

@@ -50,15 +50,6 @@
 		// méthodes
 		// ********
 
-		// Renvoi le groupe ainsi que les pays le constituant
-		public function afficheGroupe() {
-			$groupe = '<a href=Euro2016.php?grp='.$this->_nomGroupe.'><h1>Groupe '.$this->_nomGroupe.' : </h1></a><br/>';
-			foreach($this->_tabTeams as $pays) {
-				$groupe .= '<div>'.$pays->getPays().'<img src="'.$pays->getFlag().'"/></div><br/>';
-			}
-			return $groupe;
-		}
-
 		// Crée la liste des matchs du groupe dans un tableau
 		public function creationListeMatchs() {
 			for ($i=0; $i<count($this->_tabTeams); $i++) {
