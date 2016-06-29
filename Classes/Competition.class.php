@@ -39,8 +39,7 @@
 		// ************
 		
 		public function __construct($url) {
-			$fichJson = file_get_contents($url);
-			$this->_json = json_decode($fichJson);
+			$this->_json = loadData($url);
 			$this->_nomCompetition = $this->_json->name;
 			$this->createGroupes();
 		}

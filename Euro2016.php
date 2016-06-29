@@ -16,8 +16,9 @@
 	use Classes\Teams;
 
 	include_once('affichage.php');
+	include_once('loadData.php');
 
-	$euro2016 = new Competition('Json/competition.json');
+	$euro2016 = new Competition('xml/competition.xml');
 
 	// si il n'y a pas d'equipes en paramètres get, affiche la liste des groupes
 	if (!isset($_GET['grp'])) {
