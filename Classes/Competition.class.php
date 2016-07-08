@@ -3,6 +3,7 @@
 	namespace Classes;
 
 	include_once('loadData.php');
+	include_once('PDO.php');
 
 	class Competition {
 		
@@ -54,6 +55,20 @@
 			for ($i=0; $i < count($this->_json->groups); $i++) {
 				$grp = new Groups($this->_json->groups[$i]->id, $this->_json->groups[$i]->teams);
 				array_push($this->_tabGroups, $grp);
+			}
+		}
+
+		public function createBDD ($db, $data) {
+			for ($i=0; $i < count($data->groups); $i++) {
+				for ($j=0; $j < count($data->groups[$i]->teams); $j++) {
+
+					$donnees=$db->prepare("INSERT INTO Equipes (nomGroupe, nomEquipe, urlFlag) VALUES (:nomGroupe, :nomEquipe, :urlFlag)");
+				$donnees->execute(array(
+					'nomGroupe'=>$data->groups[$i]->id,
+					'nomEquipe'=>$data->groups[$i]->teams[$j]->nom,
+					'urlFlag'=>$data->groups[$i]->teams[$j]->flag
+					));
+				}	
 			}
 		}
 	}

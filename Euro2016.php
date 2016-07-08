@@ -10,14 +10,15 @@
 <?php
 
 	require_once('autoload.php');
+	include_once('affichage.php');
+	include_once('PDO.php');
 
 	use Classes\Competition;
 	use Classes\Rencontres;
 	use Classes\Teams;
 
-	include_once('affichage.php');
-
-	$euro2016 = new Competition('xml/competition.xml');
+	$euro2016 = new Competition('Json/competition.json');
+	$euro2016->createBDD($bdd, $euro2016->getJson());
 
 	// si il n'y a pas d'equipes en paramètres get, affiche la liste des groupes
 	if (!isset($_GET['grp'])) {
