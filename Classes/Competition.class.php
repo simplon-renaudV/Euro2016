@@ -2,6 +2,8 @@
 	
 	namespace Classes;
 
+	include_once('loadData.php');
+
 	class Competition {
 		
 		private $_nomCompetition;

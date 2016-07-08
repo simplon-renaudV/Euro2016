@@ -16,7 +16,6 @@
 	use Classes\Teams;
 
 	include_once('affichage.php');
-	include_once('loadData.php');
 
 	$euro2016 = new Competition('xml/competition.xml');
 
@@ -26,6 +25,7 @@
 			$groupe = $euro2016->getTabGroups()[$i];
 			afficheGroupe($groupe).'<br/>';
 		}
+		echo '<a href="importation.php">Importation</a> / <a href="exportation.php">exportation</a>';
 	}
 
 	// sinon on affiche la liste des matchs du groupe
