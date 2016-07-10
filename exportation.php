@@ -1,4 +1,6 @@
 <?php
+	
+	// exporte les pronostics dans un fichier json
 	include_once('PDO.php');
 
 	$requete = $bdd->query('SELECT * FROM Pronostics');

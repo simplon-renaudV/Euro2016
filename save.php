@@ -8,7 +8,7 @@
 	use Classes\Rencontres;
 	use Classes\Teams;
 
-	$euro2016 = new Competition('Json/competition.json');
+	$euro2016 = new Competition($bdd, 'Json/competition.json');
 
 	$data = $bdd->prepare("INSERT INTO ".$_GET['t']." (groupe, pays1, pays2, score1, score2) VALUES (:groupe, :pays1, :pays2, :score1, :score2)");
 	$data -> execute(array(

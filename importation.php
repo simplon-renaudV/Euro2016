@@ -1,4 +1,6 @@
 <?php
+	
+	// récupère les pronostics depuis un fichier Json exporté
 	include_once('PDO.php');
 
 	$pronostics = json_decode(file_get_contents('Exports/pronostics.json'));

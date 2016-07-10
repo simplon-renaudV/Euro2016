@@ -1,4 +1,5 @@
 <?php
+	// récupère les données depuis un fichier json (ou xml)
 	function loadData ($dataFile) {
 		$file = new SplFileInfo($dataFile);
 		$extension = $file->getExtension();
@@ -6,35 +7,10 @@
 		if ($extension == 'xml') {
 			$xml=simplexml_load_file("$dataFile");
 
-			$objet = new StdClass();
-	
-			$objet->name = (string) $xml->name[0];
-			$objet->groups = [];
-			
-			for ($i=0; $i<6; $i++) {
-				$nomGroupe = (string) $xml->groups[$i]->id; 
-				$paysGroupe = [];
+			$xml = json_encode($xml);
+			$xml = json_decode($xml);
 
-				$objGroupe = new StdClass();
-				$objGroupe->id=$nomGroupe;
-				$objGroupe->teams=[];
-
-				array_push($objet->groups, $objGroupe);
-
-				for ($j=0; $j<4; $j++) {
-					$nomPays = (string) $xml->groups[$i]->teams[$j]->nom[0];
-					$flagPays = (string) $xml->groups[$i]->teams[$j]->flag[0];
-					
-					$objPays = new StdClass();
-
-					$objPays->nom = $nomPays;
-					$objPays->flag = $flagPays;
-
-					array_push($objet->groups[$i]->teams, $objPays);
-
-				}
-			}
-			return $objet;
+			return $xml;
 		}
 
 		if ($extension == 'json') {
@@ -42,3 +18,10 @@
 			return json_decode($fichJson);
 		}
 	}
+
+	// permet de récupérer les données de la compétition depuis la base de données
+	// TODO
+
+	function loadDataFromDb($db) {
+	
+	}			

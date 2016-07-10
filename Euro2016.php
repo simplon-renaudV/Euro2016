@@ -12,13 +12,13 @@
 	require_once('autoload.php');
 	include_once('affichage.php');
 	include_once('PDO.php');
+	include_once('loadData.php');
 
 	use Classes\Competition;
 	use Classes\Rencontres;
 	use Classes\Teams;
 
-	$euro2016 = new Competition('Json/competition.json');
-	$euro2016->createBDD($bdd, $euro2016->getJson());
+	$euro2016 = new Competition($bdd, 'xml/competition.xml');
 
 	// si il n'y a pas d'equipes en paramètres get, affiche la liste des groupes
 	if (!isset($_GET['grp'])) {
@@ -34,6 +34,8 @@
 		rencontres($euro2016);
 		echo '<br/><a href="Euro2016.php" class="retour">Retour à la liste</a>';
 	}
+
+	loadDataFromDb($bdd);
 ?>
 
 </body>
